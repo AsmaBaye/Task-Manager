@@ -15,7 +15,7 @@ export default function AddTask(props){
 
 	return (
 		<div className='AddTask'>
-			<input placeholder='Add task here' className='task input'
+			<input placeholder='Add task here' className='taskinput'
 			onChange={handleOnchange} onKeyDown={handleKeyDown}/>
 			<button className='AddTaskButton' onClick={()=>props.handleAdd(task)}>Add Task</button>
 		</div>
