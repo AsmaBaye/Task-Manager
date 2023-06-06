@@ -1,11 +1,16 @@
 import './App.css'
 import AddTask from './AddTask'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TaskList from './TaskList';
 export default function App(){
+  let storedTasks = JSON.parse(localStorage.getItem('tasks'))
 
-  const [tasks,setTasks] = useState([])
-
+  const [tasks,setTasks] = useState(storedTasks || [])
+  console.log({tasks})
+  useEffect(()=>{
+    localStorage.setItem('tasks',JSON.stringify(tasks))
+ 
+  },[tasks])
   function handleAdd(newtask){
     setTasks((prev)=>{
       return [...prev,newtask]

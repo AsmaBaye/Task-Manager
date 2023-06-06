@@ -16,7 +16,7 @@ const handleKeyDown = (e) => {
 
 		props.setTasks((prev) => (
 			
-			prev.map((prev,index) => {
+			prev?.map((prev,index) => {
 				if (index === +e.target.name)
 					return value
 				console.log(prev)
@@ -28,7 +28,7 @@ const handleKeyDown = (e) => {
 	}						
 }
 
-const taskslist = props.tasks.map(
+const taskslist = props?.tasks?.map(
 	(task,id) => (
 		<li key={id}>
 
